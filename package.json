@@ -1,12 +1,14 @@
 {
-  "name": "application-name",
+  "name": "cryptoexchange",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.4.1",
-    "jade": "*"
+    "express": "3.1.0",
+    "jade": "*",
+    "socket.io": "0.9.14",
+    "mysql": "2.0.0-rc2"
   }
 }
