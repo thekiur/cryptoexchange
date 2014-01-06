@@ -9,6 +9,7 @@
     "express": "3.1.0",
     "jade": "*",
     "socket.io": "0.9.14",
-    "mysql": "2.0.0-rc2"
+    "mysql": "2.0.0-rc2",
+    "jayson": "*"
   }
 }
