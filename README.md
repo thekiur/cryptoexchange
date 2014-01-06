@@ -1,4 +1,4 @@
-cryptoexchange
+CryptoExchange
 ==============
 
 Open source cryptocurrency exchange software.
