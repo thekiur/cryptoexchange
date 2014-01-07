@@ -1,4 +1,12 @@
 var initTime = +new Date;
+_require = require;
+require = function(module) {
+	console.log('Loading ' + module);
+	return _require(module);
+}
+
+console.log('######## CryptoExchange v0.1 starting up ########');
+
 var express = require('express');
 var routes = {
 	index: require('./routes/index.js'),
@@ -20,7 +28,7 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
+app.use(express.cookieParser('!sword[]fish!'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
