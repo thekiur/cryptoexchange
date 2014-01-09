@@ -1,0 +1,27 @@
+{
+	"port" : 3000,
+	"wallets" : {
+		"BTC" : {
+			"host" : "localhost",
+			"port" : "8332",
+			"user" : "uzer",
+			"pass" : "pazz",
+			"minconf" : "2"
+		},
+		"LTC" : {
+			"host" : "localhost",
+			"port" : "9332",
+			"user" : "uzer",
+			"pass" : "pazz",
+			"minconf" : "3"
+		},
+		"PPC" : {
+
+		}
+	},
+	"markets" : {
+		"LTCBTC" : {
+			"fee" : 0.001
+		}
+	}
+}
