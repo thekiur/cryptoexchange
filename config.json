@@ -3,25 +3,30 @@
 	"wallets" : {
 		"BTC" : {
 			"host" : "localhost",
-			"port" : "8332",
+			"port" : 8332,
 			"user" : "uzer",
 			"pass" : "pazz",
-			"minconf" : "2"
+			"minconf" : 2,
+			"txfee" : 0.0001
 		},
 		"LTC" : {
 			"host" : "localhost",
-			"port" : "9332",
+			"port" : 9332,
 			"user" : "uzer",
 			"pass" : "pazz",
-			"minconf" : "3"
-		},
-		"PPC" : {
-
+			"minconf" : 3,
+			"txfee" : 0.001
 		}
 	},
 	"markets" : {
 		"LTCBTC" : {
 			"fee" : 0.001
 		}
+	},
+	"db" : {
+		"host": "localhost",
+		"user": "root",
+		"password": "lollakas",
+		"database": "db"
 	}
 }

@@ -4,21 +4,21 @@ require = function(module) {
 	return _require(module);
 }
 
-console.log('######## CryptoExchange v0.1 starting up ########');
+console.log('# CryptoExchange v0.1 starting up #');
 
 var Exchange = require('./lib/Exchange.js');
 var config = require('/root/lol/config.json');
 
 exchange = new Exchange(config);
 
-exchange.wallet.daemons.BTC.getInfo(function(err, info) {
+/*exchange.wallet.daemons.BTC.getInfo(function(err, info) {
 	console.log('BITCOIN DAEMON INFO');
 	if (err) throw err;
 	else console.log(info);
-});
+});*/
 
 exchange.wallet.daemons.LTC.getInfo(function(err, info) {
-	console.log('LITECOIN DAEMON INFO');
+	console.log('# Litecoin Status #');
 	if (err) throw err;
 	else console.log(info);
 });
