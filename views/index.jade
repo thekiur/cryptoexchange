@@ -1,5 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #body(style='')
+    .container(style='width: 980px; position: relative; left: -10px;')
+      .row(style='padding-top: 10px;')
+        .col-md-8.col-sm-12(style='padding-right: 5px;')
+          .boxx(style='text-align: center; height: 160px;')
+            div(style='padding-top: 46px;') CandleStick Graph
+          .boxx(style='margin-top: 10px; height: 300px; float: left; width: 49.1%;')
+            span Buy 
+          .boxx(style='margin-top: 10px; height: 300px; float: left; width: 49.1%; margin-left: 1.8%;')
+            span Sell 
+          .clear
+        .col-md-4.col-sm-12(style='padding-left: 5px;')
+          .boxx(style='height: 360px; position: relative;')
+            div(style='text-align: center; padding-top: 140px;') TrollBox
+            div(style='position: absolute; bottom: 0; left: 0; width: 100%;')
+              input.trollboxinput(name='tbinput', type='text', placeholder='TrollBox not implemented yet')

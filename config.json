@@ -16,10 +16,18 @@
 			"pass" : "pazz",
 			"minconf" : 3,
 			"txfee" : 0.001
+		},
+		"RPC" : {
+			"host" : "localhost",
+			"port" : 9026,
+			"user" : "ronpaulcoinrpc",
+			"pass" : "G4dzc62evmTTkCBtArCoqR7wR464FTGpTGgB7vCuhTRK",
+			"minconf" : 3,
+			"txfee" : 0.001
 		}
 	},
 	"markets" : {
-		"LTCBTC" : {
+		"RPCLTC" : {
 			"fee" : 0.001
 		}
 	},

@@ -10,15 +10,16 @@ var Exchange = require('./lib/Exchange.js');
 var config = require('/root/lol/config.json');
 
 exchange = new Exchange(config);
+process.exchange = exchange;
 
-/*exchange.wallet.daemons.BTC.getInfo(function(err, info) {
-	console.log('BITCOIN DAEMON INFO');
+exchange.wallet.daemons.RPC.getInfo(function(err, info) {
+	console.log('# RonPaulCoin Status #');
 	if (err) throw err;
-	else console.log(info);
-});*/
+	else console.log(info.blocks, info.connections);
+});
 
 exchange.wallet.daemons.LTC.getInfo(function(err, info) {
 	console.log('# Litecoin Status #');
 	if (err) throw err;
-	else console.log(info);
+	else console.log(info.blocks, info.connections);
 });

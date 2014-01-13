@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  #body(style='')
+    .container(style='width: 980px; position: relative; left: -10px;')
+      .row(style='padding-top: 10px;')
+        .col-md-8.col-sm-12(style='padding-right: 5px;')
+          .boxx(style='text-align: center; height: 360px;')
+            h2(style='margin-top: 10px; margin-bottom: 20px;') Create account
+            if error
+              div(style='padding-bottom: 20px;')
+                .label.label-danger= error
+            if success
+              div(style='padding-bottom: 20px;')
+                .label.label-success Account created, please log in
+            form(action='/register', method='post', style='width: 300px; margin: auto;')
+              input(name='username', type='text', placeholder='Username').form-control
+              input(name='email', type='text', placeholder='E-mail address').form-control
+              input(name='password1', type='password', placeholder='Password').form-control
+              input(name='password2', type='password', placeholder='Password (confirm)').form-control
+              div(style='height: 10px;')
+              input(name='submit', type='submit', value='Create account').form-control.btn.btn-primary
+            div(style='height: 20px;')
+        .col-md-4.col-sm-12(style='padding-left: 5px;')
+          .boxx(style='height: 360px; position: relative;')
+            div(style='text-align: center; padding-top: 140px;') TrollBox
+            div(style='position: absolute; bottom: 0; left: 0; width: 100%;')
+              input.trollboxinput(name='tbinput', type='text', placeholder='TrollBox not implemented yet')

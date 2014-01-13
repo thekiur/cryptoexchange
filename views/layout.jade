@@ -2,6 +2,56 @@ doctype html
 html
   head
     title= title
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Dosis:400,500,600,700')
+    script(src='//code.jquery.com/jquery-1.10.1.min.js')
+    script(src='//code.jquery.com/jquery-migrate-1.2.1.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js')
+    script(src='/scripts/CoinMarket.io.js')
   body
+    #header
+      div#logo
+        span.cool CoinMarket.io
+      div#status
+        span.
+          This is a CoinMarket.io prototype without a design...
+      div.clear
+      div#menu
+        if !page
+          a.active(href='/')
+            .button Trade
+        else
+          a(href='/')
+            .button Trade
+        a(href='/news',class=(page=='news'?'active':''))
+          .button News
+        a(href='/tos',class=(page=='tos'?'active':''))
+          .button Terms of Service
+        a(href='/faq',class=(page=='faq'?'active':''))
+          .button FAQ
+        a(href='/support',class=(page=='support'?'active':''))
+          .button Support
+        if !loggedin
+          a(href='/register',class=(page=='register'?'active':''))
+            .button Create Account
+      if loggedin
+        div#menu-right
+          a(href='/wallet',class=(page=='wallet'?'active':''))
+            .button Wallet
+          a(href='/history',class=(page=='history'?'active':''))
+            .button Trade history
+          a(href='/login/logout')
+            .button(style='padding-right: 15px;') Log out
+      if loggedin
+        div#rightbox-loggedin
+      else
+        div#rightbox-loggedout
+          form(action='/login',method='post')
+            input(name='username',type='text',placeholder='Username')
+            br
+            input(name='password',type='password',placeholder='Password')
+            br
+            button Log in
+      div.clear
     block content

@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  #body(style='')
+    .container(style='width: 980px; position: relative; left: -10px;')
+      .row(style='padding-top: 10px;')
+        .col-md-8.col-sm-12(style='padding-right: 5px;')
+          .boxx(style='text-align: center;',id='walletbox')
+            if error
+              div(style='padding-bottom: 20px;')
+                .label.label-danger= error
+            if success
+              div(style='padding-bottom: 20px;')
+                .label.label-success= success
+            table(width='100%',cellspacing='0',cellpadding='5').tbl
+              tr(style='font-weight: bold;')
+                td(width='10%') Coin
+                td(width='20%') Balance
+                td(width='40%') Deposit address
+                td(width='30%') Actions
+              - each coin in data
+                tr(style='font-weight: bold;')
+                  td(width='10%')= coin.name
+                  td(width='20%')
+                    span.label.label-small.label-success= coin.balance + ' ' + coin.name
+                    if coin.unconfirmedbalance
+                      div(style='height: 7px;')
+                      span.label.label-small.label-warning= coin.unconfirmedbalance + ' ' + coin.name
+                  td(width='40%')
+                    span(style='font-weight: 600; font-size: 15px;')= coin.address
+                    if coin.unconfirmedbalance > 0
+                      br
+                      span(style='font-weight: 300; font-size: 14px;') You have unconfirmed transaction(s)
+                  td(width='30%',style='text-align: center;')
+                    a(href='/wallet/newaddress/'+coin.name)
+                      button.btn.btn-large.btn-primary New address
+                    div(style='height: 5px;')
+                    a(href='javascript:void(document.getElementById("wd-' + coin.name + '").style.display = "table-row"); clearInterval(arefint);')
+                      button.btn.btn-large.btn-primary Withdraw
+                tr(style='display: none;', id='wd-' + coin.name)
+                  th(colspan=4)
+                    form(action='/wallet/withdraw/' + coin.name, method='post', style='width: 300px; margin: auto;')
+                      input(name='amount', type='text', placeholder='Amount to withdraw. TX fee = 0.001').form-control
+                      input(name='address', type='text', placeholder=coin.name + ' address').form-control
+                      input(name='submit', type='submit', value='Process withdrawal').form-control.btn.btn-primary
+                    div(style='height: 5px;')
+            br
+            span(style='font-weight: 300; font-size: 14px;') This table is refreshed every 15 seconds, unless you click Withdraw.
+
+        .col-md-4.col-sm-12(style='padding-left: 5px;')
+          .boxx(style='height: 360px; position: relative;')
+            div(style='text-align: center; padding-top: 140px;') TrollBox
+            div(style='position: absolute; bottom: 0; left: 0; width: 100%;')
+              input.trollboxinput(name='tbinput', type='text', placeholder='TrollBox not implemented yet')
+
+  script.
+    $(function() {
+      arefint = setInterval(function() {
+        $('#walletbox').load('/wallet/ajax');
+      }, 15000);
+    });
