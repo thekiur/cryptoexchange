@@ -46,8 +46,8 @@ module.exports = function(req, res) {
   	// get new address and output
   	if (!req.session.getnewaddrcount) req.session.getnewaddrcount = 1;
   	else req.session.getnewaddrcount++;
-  	if (req.session.getnewaddrcount >= 10) {
-  		loopIt('Flood protection: You can generate 10 addresses per session.');
+  	if (req.session.getnewaddrcount >= 10 * numDaemons) {
+  		loopIt('Flood protection: You can generate 30 addresses per session.');
   		return;
   	}
   	exchange.wallet.getNewAddress(account, req.params.coin, function(err, addr) {

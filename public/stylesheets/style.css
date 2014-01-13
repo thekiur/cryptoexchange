@@ -104,3 +104,6 @@ a.active {
 	border: 1px solid #ccc;
 }
 a:hover {text-decoration: none;}
+.label {
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+}

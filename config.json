@@ -24,6 +24,14 @@
 			"pass" : "G4dzc62evmTTkCBtArCoqR7wR464FTGpTGgB7vCuhTRK",
 			"minconf" : 3,
 			"txfee" : 0.001
+		},
+		"DOGE" : {
+			"host" : "localhost",
+			"port" : 22555,
+			"user" : "dogecoinrpc",
+			"pass" : "6f17i9BRUQHpSvPQbYqky14FQjSEgA6Z2szEZb2i5JRF",
+			"minconf" : 3,
+			"txfee" : 1
 		}
 	},
 	"markets" : {

@@ -4,14 +4,35 @@ block content
   #body(style='')
     .container(style='width: 980px; position: relative; left: -10px;')
       .row(style='padding-top: 10px;')
+
         .col-md-8.col-sm-12(style='padding-right: 5px;')
           .boxx(style='text-align: center; height: 160px;')
             div(style='padding-top: 46px;') CandleStick Graph
           .boxx(style='margin-top: 10px; height: 300px; float: left; width: 49.1%;')
-            span Buy 
+            div(style='padding-bottom: 5px; font-size: 18px; font-weight: 700; float: left;') Buy RPC
+            span.label.label-small.label-success(style='float: right; font-weight: 500;') Balance: <b>0.4</b> LTC
+            .clear
+            span.label.label-small.label-success(style='float: right; font-weight: 500;') Lowest ask: <b>1.12</b> LTC
+            .clear
+            form(action='/',method='post',style='padding-top: 2px;')
+              input.form-control(name='amount',type='text',placeholder='Amount (RPC)')
+              input.form-control(name='price',type='text',placeholder='Price (LTC per RPC)',value='1.12')
+              input.form-control.btn.btn-primary(name='buy',type='submit',value='Buy RPC')
+            div(style='padding-top: 15px; padding-bottom: 5px; font-size: 18px; font-weight: 700;') Sell orders
+
           .boxx(style='margin-top: 10px; height: 300px; float: left; width: 49.1%; margin-left: 1.8%;')
-            span Sell 
+            div(style='padding-bottom: 5px; font-size: 18px; font-weight: 700; float: left;') Sell RPC
+            span.label.label-small.label-success(style='float: right; font-weight: 500;') Balance: <b>0.05</b> RPC
+            .clear
+            span.label.label-small.label-success(style='float: right; font-weight: 500;') Highest bid: <b>1.08</b> LTC
+            .clear
+            form(action='/',method='post',style='padding-top: 2px;')
+              input.form-control(name='amount',type='text',placeholder='Amount (RPC)')
+              input.form-control(name='price',type='text',placeholder='Price (LTC per RPC)',value='1.08')
+              input.form-control.btn.btn-primary(name='sell',type='submit',value='Sell RPC')
+            div(style='padding-top: 15px; padding-bottom: 5px; font-size: 18px; font-weight: 700;') Buy orders
           .clear
+
         .col-md-4.col-sm-12(style='padding-left: 5px;')
           .boxx(style='height: 360px; position: relative;')
             div(style='text-align: center; padding-top: 140px;') TrollBox
